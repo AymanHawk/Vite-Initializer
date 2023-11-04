@@ -1,6 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+
 //import './index.css'
 import Person from './components/Person.jsx'
 import CustomInput from './components/CustomInput.jsx'
@@ -12,10 +10,42 @@ import CheckingIn from './components/CheckingIn.jsx';
 import Accordian from './components/Panel.jsx';
 import FilterableList from './components/FilterableList.jsx';
 import Clock from './components/Clock.jsx'
+//router
+import React from 'react';
+import ReactDOM from 'react-dom/client'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import App from './App.jsx'
+import Profile from './components/Profile.jsx';
+import Spinach from './components/Spinach.jsx';
+import Popeye from './components/Popeye.jsx';
+import DefaultProfile from './components/DefaultProfile.jsx';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  // {
+  //   path: "profile",
+  //   element: <Profile />,
+  //     children: [
+  //       { index: true, element: <DefaultProfile/>},
+  //       { path: "spinach", element: <Spinach /> },
+  //       { path: "popeye", element: <Popeye /> },
+  //     ]
+  // },
+  {
+    path: 'profile/:name',
+    element: <Profile/>,
+  },
+  {
+    path: "/google",
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
  
