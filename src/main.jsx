@@ -19,33 +19,13 @@ import Profile from './components/Profile.jsx';
 import Spinach from './components/Spinach.jsx';
 import Popeye from './components/Popeye.jsx';
 import DefaultProfile from './components/DefaultProfile.jsx';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  // {
-  //   path: "profile",
-  //   element: <Profile />,
-  //     children: [
-  //       { index: true, element: <DefaultProfile/>},
-  //       { path: "spinach", element: <Spinach /> },
-  //       { path: "popeye", element: <Popeye /> },
-  //     ]
-  // },
-  {
-    path: 'profile/:name',
-    element: <Profile/>,
-  },
-  {
-    path: "/google",
-  },
-]);
+import ErrorPage from './components/ErrorPage.jsx';
+//
+import Router from './Router.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router/>
   </React.StrictMode>,
 )
  
